@@ -18,5 +18,12 @@ namespace JSONNumbers.Tests
             bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a__minus_number_to_validate()
+        {
+            string console = "-100";
+            bool success = true;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }
