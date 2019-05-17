@@ -2,11 +2,18 @@
 
 namespace JSONNumbers
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string console = Console.ReadLine();
+            Console.WriteLine(IsValidJSONNumber(console));
+            Console.ReadLine();
+        }
+
+        public static bool IsValidJSONNumber(string console)
+        {
+            throw new NotImplementedException();
         }
     }
 }
