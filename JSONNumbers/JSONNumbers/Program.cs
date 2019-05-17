@@ -7,7 +7,16 @@ namespace JSONNumbers
         public static void Main(string[] args)
         {
             string console = Console.ReadLine();
-            Console.WriteLine(IsValidJSONNumber(console));
+            bool success = IsValidJSONNumber(console);
+            if (success == true)
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+            Console.ReadLine();
             Console.ReadLine();
         }
 
