@@ -74,5 +74,12 @@ namespace JSONNumbers.Tests
             bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a_DECIMAL_number_not_followed_by_number_to_validate()
+        {
+            string console = "12.";
+            bool success = false;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }
