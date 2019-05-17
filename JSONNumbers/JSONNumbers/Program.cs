@@ -13,7 +13,8 @@ namespace JSONNumbers
 
         public static bool IsValidJSONNumber(string console)
         {
-            throw new NotImplementedException();
+
+            return true;
         }
     }
 }
