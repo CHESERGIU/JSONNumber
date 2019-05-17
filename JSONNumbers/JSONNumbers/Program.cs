@@ -27,6 +27,8 @@ namespace JSONNumbers
                 success = true;
             }
             else success = false;
+            if (console[0] == '0' && console[1] != '.')
+                return false;            
             return success;           
         }
     }

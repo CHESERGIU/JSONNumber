@@ -8,7 +8,7 @@ namespace JSONNumbers.Tests
         [Fact]
         public void Initial_Test()
         {
-            string console = "0";
+            string console = "0.0";
             Program.IsValidJSONNumber(console);
         }
         [Fact]
@@ -60,12 +60,18 @@ namespace JSONNumbers.Tests
             bool success = false;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
-
         [Fact]
         public void For_a__number_with_leading_zero_to_validate()
         {
             string console = "012";
             bool success = false;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
+        [Fact]
+        public void For_a_DECIMAL_number_with_leading_zero_to_validate()
+        {
+            string console = "0.12";
+            bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
     }
