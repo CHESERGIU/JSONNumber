@@ -17,7 +17,6 @@ namespace JSONNumbers
                 Console.WriteLine("Invalid");
             }
             Console.ReadLine();
-            Console.ReadLine();
         }
 
         public static bool IsValidJSONNumber(string console)

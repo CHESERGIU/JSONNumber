@@ -25,5 +25,12 @@ namespace JSONNumbers.Tests
             bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a__number_with_decimal_point_to_validate()
+        {
+            string console = "12.34";
+            bool success = true;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }
