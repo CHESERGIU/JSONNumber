@@ -13,8 +13,13 @@ namespace JSONNumbers
 
         public static bool IsValidJSONNumber(string console)
         {
-
-            return true;
+            bool success = true;
+            if (double.TryParse(console, out double number))
+            {
+                success = true;
+            }
+            else success = false;
+            return success;           
         }
     }
 }
