@@ -53,5 +53,20 @@ namespace JSONNumbers.Tests
             bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a__number_with_Exponent_invalid_to_validate()
+        {
+            string console = "12.123E";
+            bool success = false;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
+
+        [Fact]
+        public void For_a__number_with_leading_zero_to_validate()
+        {
+            string console = "012";
+            bool success = false;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }
