@@ -32,5 +32,26 @@ namespace JSONNumbers.Tests
             bool success = true;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a__number_with_exponent_to_validate()
+        {
+            string console = "12.123e3";
+            bool success = true;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
+        [Fact]
+        public void For_a__number_with_Exponent_plus_to_validate()
+        {
+            string console = "12.123E+3";
+            bool success = true;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
+        [Fact]
+        public void For_a__number_with_Exponent_minus_to_validate()
+        {
+            string console = "12.123E-2";
+            bool success = true;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }
