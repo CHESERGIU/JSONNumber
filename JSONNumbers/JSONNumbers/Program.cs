@@ -26,7 +26,7 @@ namespace JSONNumbers
             {
                 success = ZeroLeading(console, number);
                 if (console[console.Length - 1] == '.')
-                    success = PointEnding(console, number);                
+                    success = PointEnding(console, number);
             }
             else success = false;       
             return success;           
@@ -34,17 +34,16 @@ namespace JSONNumbers
 
         private static bool PointEnding(string console, double number)
         {
-            if (number.ToString().Length != console.Length) return false;
-            return true;            
+            return number.ToString().Length == console.Length;
         }
 
         public static bool ZeroLeading(string console, double number)
         {
-            if (console[0] == '0')
-            {
-                if (number > 1) return false;
-            }
+            if (console[0] == '0' && number > 1)
+                    return false;
             return true;
+            
         }
+
     }
 }
