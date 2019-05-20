@@ -21,29 +21,19 @@ namespace JSONNumbers
 
         public static bool IsValidJSONNumber(string console)
         {
-            bool success = true;
-            if (double.TryParse(console, out double number))
-            {
-                success = ZeroLeading(console, number);
-                if (console[console.Length - 1] == '.')
-                    success = PointEnding(console, number);
-            }
-            else success = false;       
-            return success;           
+            return double.TryParse(console, out double number)
+              && !HasLeadingZero(console, number)
+              && !EndsInDot(console);
         }
 
-        private static bool PointEnding(string console, double number)
+        public static bool HasLeadingZero(string input, double number)
         {
-            return number.ToString().Length == console.Length;
+            return number > 1 && input[0] == '0';
         }
 
-        public static bool ZeroLeading(string console, double number)
+        public static bool EndsInDot(string input)
         {
-            if (console[0] == '0' && number > 1)
-                    return false;
-            return true;
-            
+            return input.EndsWith(".");
         }
-
     }
 }
