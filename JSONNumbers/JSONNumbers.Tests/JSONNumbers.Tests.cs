@@ -81,5 +81,12 @@ namespace JSONNumbers.Tests
             bool success = false;
             Assert.Equal(success, Program.IsValidJSONNumber(console));
         }
+        [Fact]
+        public void For_a_number_with_leading_zero_not_followed_by_number_to_validate()
+        {
+            string console = "00012";
+            bool success = false;
+            Assert.Equal(success, Program.IsValidJSONNumber(console));
+        }
     }
 }

@@ -24,24 +24,27 @@ namespace JSONNumbers
             bool success = true;
             if (double.TryParse(console, out double number))
             {
-                success = true;
+                success = ZeroLeading(console, number);
+                if (console[console.Length - 1] == '.')
+                    success = PointEnding(console, number);                
             }
-            else success = false;
-            for(int i = 0; i < console.Length; i++)
-            {
-                if (console[i] == '.')
-                {
-                    if (i == console.Length - 1) return false;
-                }
-
-            }            
-            if (console[0] == '0' && double.TryParse(console, out double num))
-            {
-                if (num > 1)
-                    return false;
-            }
-                     
+            else success = false;       
             return success;           
+        }
+
+        private static bool PointEnding(string console, double number)
+        {
+            if (number.ToString().Length != console.Length) return false;
+            return true;            
+        }
+
+        public static bool ZeroLeading(string console, double number)
+        {
+            if (console[0] == '0')
+            {
+                if (number > 1) return false;
+            }
+            return true;
         }
     }
 }
