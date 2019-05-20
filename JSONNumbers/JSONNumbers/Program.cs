@@ -27,9 +27,20 @@ namespace JSONNumbers
                 success = true;
             }
             else success = false;
-            if (console[console.Length - 1] == '.') return false;
-            if (console[0] == '0' && console[1] != '.')
-                return false;            
+            for(int i = 0; i < console.Length; i++)
+            {
+                if (console[i] == '.')
+                {
+                    if (i == console.Length - 1) return false;
+                }
+
+            }            
+            if (console[0] == '0' && double.TryParse(console, out double num))
+            {
+                if (num > 1)
+                    return false;
+            }
+                     
             return success;           
         }
     }
